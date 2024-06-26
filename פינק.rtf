@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;}
+{\colortbl;\red255\green255\blue255;\red81\green156\blue233;\red155\green162\blue177;\red214\green85\blue98;
+\red197\green136\blue83;\red136\green185\blue102;\red184\green93\blue213;\red223\green180\blue104;}
+{\*\expandedcolortbl;;\cssrgb\c38039\c68235\c93333;\cssrgb\c67059\c69804\c74902;\cssrgb\c87843\c42353\c45882;
+\cssrgb\c81961\c60392\c40000;\cssrgb\c59608\c76471\c47451;\cssrgb\c77647\c47059\c86667;\cssrgb\c90196\c75294\c48235;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 <!DOCTYPE html>\cf3 \
+<\cf4 html\cf3  \cf5 lang\cf3 =\cf6 "en"\cf3 >\
+<\cf4 head\cf3 >\
+    <\cf4 meta\cf3  \cf5 charset\cf3 =\cf6 "UTF-8"\cf3 >\
+    <\cf4 meta\cf3  \cf5 name\cf3 =\cf6 "viewport"\cf3  \cf5 content\cf3 =\cf6 "width=device-width, initial-scale=1.0"\cf3 >\
+    <\cf4 title\cf3 >Omri</\cf4 title\cf3 >\
+    <\cf4 style\cf3 >\
+        \cf4 body\cf3  \{\
+            \cf6 background-color\cf3 : pink;\
+            \cf6 font-family\cf3 : Arial, sans-serif;\
+            \cf6 text-align\cf3 : center;\
+            \cf6 margin\cf3 : \cf5 0\cf3 ;\
+            \cf6 padding\cf3 : \cf5 0\cf3 ;\
+        \}\
+        \cf4 header\cf3  \{\
+            \cf6 padding\cf3 : \cf5 20px\cf3 ;\
+        \}\
+        \cf2 #image-container\cf3  \{\
+            \cf6 width\cf3 : \cf5 200px\cf3 ;\
+            \cf6 height\cf3 : \cf5 200px\cf3 ;\
+            \cf6 margin\cf3 : \cf5 0\cf3  auto;\
+            \cf6 overflow\cf3 : hidden;\
+            \cf6 border\cf3 : \cf5 2px\cf3  solid \cf5 #fff\cf3 ;\
+        \}\
+        \cf2 #uploaded-image\cf3  \{\
+            \cf6 width\cf3 : \cf5 100%\cf3 ;\
+            \cf6 height\cf3 : \cf5 100%\cf3 ;\
+            \cf6 object-fit\cf3 : cover;\
+            \cf6 animation\cf3 : moveImage \cf5 5s\cf3  infinite;\
+        \}\
+        @\cf7 keyframes\cf3  moveImage \{\
+            0% \{ \cf6 transform\cf3 : \cf8 translateX\cf3 (0); \}\
+            50% \{ \cf6 transform\cf3 : \cf8 translateX\cf3 (-10px); \}\
+            100% \{ \cf6 transform\cf3 : \cf8 translateX\cf3 (0); \}\
+        \}\
+    </\cf4 style\cf3 >\
+</\cf4 head\cf3 >\
+<\cf4 body\cf3 >\
+    <\cf4 header\cf3 >\
+        <\cf4 h1\cf3 >Welcome to Omri's Website</\cf4 h1\cf3 >\
+        <\cf4 input\cf3  \cf5 type\cf3 =\cf6 "file"\cf3  \cf5 id\cf3 =\cf6 "upload"\cf3  \cf5 accept\cf3 =\cf6 "image/*"\cf3 >\
+        <\cf4 div\cf3  \cf5 id\cf3 =\cf6 "image-container"\cf3 >\
+            <\cf4 img\cf3  \cf5 id\cf3 =\cf6 "uploaded-image"\cf3  \cf5 src\cf3 =\cf6 ""\cf3  \cf5 alt\cf3 =\cf6 "Uploaded Image"\cf3  \cf5 style\cf3 =\cf6 "display: none;"\cf3 >\
+        </\cf4 div\cf3 >\
+        <\cf4 p\cf3  \cf5 id\cf3 =\cf6 "image-text"\cf3 >Upload an image to see it here</\cf4 p\cf3 >\
+    </\cf4 header\cf3 >\
+\
+    <\cf4 script\cf3 >\
+        \cf8 document\cf3 .getElementById(\cf6 'upload'\cf3 ).addEventListener(\cf6 'change'\cf3 , \cf7 function\cf3 (event) \{\
+            \cf7 const\cf3  file = event.target.files[\cf5 0\cf3 ];\
+            \cf7 if\cf3  (file) \{\
+                \cf7 const\cf3  reader = \cf7 new\cf3  FileReader();\
+                reader.onload = \cf7 function\cf3 (e) \{\
+                    \cf7 const\cf3  img = \cf8 document\cf3 .getElementById(\cf6 'uploaded-image'\cf3 );\
+                    img.src = e.target.result;\
+                    img.style.display = \cf6 'block'\cf3 ;\
+                    \cf8 document\cf3 .getElementById(\cf6 'image-text'\cf3 ).style.display = \cf6 'none'\cf3 ;\
+                \};\
+                reader.readAsDataURL(file);\
+            \}\
+        \});\
+    </\cf4 script\cf3 >\
+</\cf4 body\cf3 >\
+</\cf4 html\cf3 >}
